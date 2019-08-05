@@ -1,0 +1,14 @@
+<div class="pull-xs-rigth">
+  <small>
+    <span class="badge badge-secondary" *ngIf="cart.itemCount>0">
+      {{cart.itemCount}} item(s)
+      {{cart.cartPrice|currency:"USD":true:"2.2-2"}}
+    </span>
+    <span class="badge badge-secondary" *ngIf="cart.itemCount==0" >
+      (empty)
+    </span>
+    <button class="btn btn-light btn-outline-info btn-sm"[disabled]="cart.itemCount==0" >
+      <img src="https://img.icons8.com/nolan/30/000000/shopping-cart-loaded.png">
+    </button>
+  </small>
+</div>
