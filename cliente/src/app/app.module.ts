@@ -7,6 +7,7 @@ import { StoreModule } from './store/store.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CartsummaryComponent } from './store/cartsummary/cartsummary.component';
 import { Cart } from './model/cart';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { Cart } from './model/cart';
   imports: [
     BrowserModule,
     StoreModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
   Cart

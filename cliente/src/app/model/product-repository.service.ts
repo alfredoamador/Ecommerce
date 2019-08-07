@@ -20,7 +20,7 @@ private selectscale:string;
         this.products=response['products'];
         this.categories=response['products'].map(p=>p.productLine)
         .filter((c,index,array)=>array.indexOf(c)===index ).sort();
-console.log(this.categories);
+
 
 this.vendor=response['products'].map(p=>p.productVendor)
 .filter((c,index,array)=>array.indexOf(c)===index ).sort();
@@ -65,7 +65,7 @@ this.scale=response['products'].map(p=>p.productScale)
   getvendor():string[]{
     return this.vendor;
   }
-  getScale():string[]{
+  getScale():string[]{ 
     return this.scale;
   }
 }
