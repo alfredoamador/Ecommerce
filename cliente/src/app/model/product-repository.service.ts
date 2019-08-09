@@ -34,7 +34,10 @@ this.scale=response['products'].map(p=>p.productScale)
       });
 
    }
-
+   getproductdetail(productcode:string)
+{
+  return this.products.filter((x=>x.productCode==productcode));
+}
    getproducts(productLine:string=null,productvendor:string=null,productScale:string=null):Product[]{
    // this.categories=this.products.filter((p)=>productLine==null || p.productLine==productLine).filter((p)=>productvendor==null||p.productVendor==productvendor)
    //.filter((p)=>productScale==null || p.productScale==productScale).map(p=>p.productLine)

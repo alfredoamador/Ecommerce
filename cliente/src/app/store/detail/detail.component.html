@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+
+<div class="container">
+    <div class="row" *ngFor="let product of productdetail">
+        <div class="col">
+            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+              
+        </div>
+        <div class="col">
+            <h1 class="text-center">Datos del producto</h1>
+           
+                <div class="card-body">
+                  <h4 class="card-title">
+                  </h4>
+                  <h5 class="list-inline-item">{{product.MSRP| currency:'$'}}</h5>
+                  <p class="card-text">{{product.productDescription| slice:0: 50}}...</p>
+                  <h5 class="list-inline-item">{{product.productLine}}</h5>
+                  <h5 class="list-inline-item">{{product.productVendor}}</h5>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-sm" (click)="addlinec(product)" >
+                      Add  <img src="https://img.icons8.com/bubbles/50/000000/add-shopping-cart.png">
+                      </button>
+                </div>
+              
+
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
