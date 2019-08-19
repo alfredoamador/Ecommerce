@@ -1,21 +1,20 @@
-<?php
+<?php 
+    namespace app\Controllers;
 
-  namespace app\Controllers;
+    class Controllers {
+        public function __construct($container){
+            $this->container = $container;
+        }
 
-  class Controllers {
-    public function __construct($container) {
-      $this->container = $container;
+        public function __get($property){
+            if ($this->container->{$property}){
+                return $this->container->{$property};
+            }
+        }
+
+        public function getObject($params){
+            return (object)params;
+        }
     }
-
-    public function __get($property) {
-      if ($this->container->{$property}) {
-        return $this->container->{$property};
-      }
-    }
-
-    public function getObject($params){
-      return (object)params;
-    }
-  }
-
+    
 ?>

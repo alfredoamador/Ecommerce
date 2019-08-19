@@ -9,7 +9,7 @@ export class ProductDatasourceService {
 private baseUrl:string;
 
   constructor(private httpClient:HttpClient) { 
-    this.baseUrl= `${PROTOCOL}://${location.hostname}/ecommerce/api`;
+    this.baseUrl= `${PROTOCOL}://${location.hostname}:/ecommerce/api`;
   
 
   };
@@ -24,4 +24,10 @@ private baseUrl:string;
       return this.httpClient.get(this.baseUrl+'/productline');
       
     } 
+    getorders():any {
+      return this.httpClient.get(this.baseUrl+'/orders');
+    }
+    getordersdetail():any {
+      return this.httpClient.get(this.baseUrl+'/orderdetail');
+    }
 }

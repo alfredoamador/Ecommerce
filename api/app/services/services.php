@@ -1,19 +1,20 @@
-<?php
+<?php 
+    namespace app\Services;
 
-  namespace app\services;
+    class Services {
+        public function __construct($container){
+            $this->container = $container;
+        }
 
-  class services {
+        public function __get($property){
+            if ($this->container->{$property}){
+                return $this->container->{$property};
+            }
+        }
 
-    function __construct($container){
-      $this->container = $container;
-    }
-
-    public function __get($property) {
-      if ($this->container->{$property}) {
-        return $this->container->{$property};
-      }
+        public function getObject($params){
+            return (object)params;
+        }
     }
     
-  }
-
 ?>

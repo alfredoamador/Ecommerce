@@ -9,8 +9,12 @@ export class ProductRepositoryService {
 private products:Product[]=[];
 
 private categories:string[]=[];
+private Orders:string[]=[];
 private vendor:string[]=[];
 private scale:string[]=[];
+private order:string []=[];
+private detail:string[]=[];
+private num:number=10100;
 private selectcategory:string;
 private selectvendor:string;
 private selectscale:string;
@@ -30,14 +34,37 @@ this.scale=response['products'].map(p=>p.productScale)
 
 
 
-
       });
+      dataSourceServices.getorders().subscribe((respon)=>{
+
+   this.order=respon['Order'];
+
+       
+    });
+    this.dataSourceServices.getordersdetail().subscribe((respon)=>{
+
+      this.detail=respon['orderdetail'];
+   
+          
+       });
+    
+   
+
 
    }
-   getproductdetail(productcode:string)
-{
-  return this.products.filter((x=>x.productCode==productcode));
-}
+
+  getProductsdetail(productcode:string):Product[]{
+
+   return this.products.filter((p)=>p.productCode==productcode);
+  }
+
+  getdetailorder(num:number){
+  
+    return this.detail.filter( (pokemon)=>{
+      return pokemon["orderNumber"] === num
+     })
+  }
+  
    getproducts(productLine:string=null,productvendor:string=null,productScale:string=null):Product[]{
    // this.categories=this.products.filter((p)=>productLine==null || p.productLine==productLine).filter((p)=>productvendor==null||p.productVendor==productvendor)
    //.filter((p)=>productScale==null || p.productScale==productScale).map(p=>p.productLine)
@@ -60,7 +87,9 @@ this.scale=response['products'].map(p=>p.productScale)
  
 
   
-    
+    getorder():string[]{
+      return this.order;
+    }
    getcategories():string[]{
     
     return this.categories;
@@ -70,5 +99,8 @@ this.scale=response['products'].map(p=>p.productScale)
   }
   getScale():string[]{ 
     return this.scale;
+  }
+  getorders():string[]{
+    return this.Orders;
   }
 }

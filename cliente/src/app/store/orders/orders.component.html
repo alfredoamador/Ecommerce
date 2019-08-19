@@ -1,0 +1,35 @@
+<app-nav></app-nav>
+
+<div class="container">
+ 
+  <h1 class="text-center" style="margin: 20px 0px"> Orders</h1>
+  
+  
+  
+  <table  class="table table-striped ">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">Required Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Option</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orders of order">
+        
+        <td >{{orders.orderNumber}}</td>
+        <td >{{orders.orderDate}}</td>
+        <td >{{orders.requiredDate}}</td>
+        <td >{{orders.status}}</td>
+        <td ><a  class="btn btn-primary"  routerLink="./{{orders.orderNumber}}" routerLinkActive="active">See Detail</a></td>
+    
+      </tr>
+   
+      
+    </tbody>
+  </table>
+  
+  </div>
+<app-footer></app-footer>

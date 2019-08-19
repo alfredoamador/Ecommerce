@@ -1,19 +1,19 @@
 <?php
 
-  namespace app\Models;
+namespace app\Models;
 
-  class Models {
-
-    function __construct($container){
-      $this->container = $container;
+class Models{
+    public function __construct($container){
+        $this->container = $container;
     }
 
-    public function __get($property) {
-      if ($this->container->{$property}) {
-        return $this->container->{$property};
-      }
+    public function __get($property){
+        if ($this->container->{$property}){
+            return $this->container->{$property};
+        }
     }
 
-  }
+
+}
 
 ?>

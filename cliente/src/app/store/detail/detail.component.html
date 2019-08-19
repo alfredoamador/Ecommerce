@@ -1,30 +1,34 @@
 <app-nav></app-nav>
+<div class="title">
+<h1 class="text-center"> Detail product </h1>  
+</div>
 
-<div class="container">
-    <div class="row" *ngFor="let product of productdetail">
-        <div class="col">
-            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
-              
-        </div>
-        <div class="col">
-            <h1 class="text-center">Datos del producto</h1>
-           
-                <div class="card-body">
-                  <h4 class="card-title">
-                  </h4>
-                  <h5 class="list-inline-item">{{product.MSRP| currency:'$'}}</h5>
-                  <p class="card-text">{{product.productDescription| slice:0: 50}}...</p>
-                  <h5 class="list-inline-item">{{product.productLine}}</h5>
-                  <h5 class="list-inline-item">{{product.productVendor}}</h5>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-primary btn-sm" (click)="addlinec(product)" >
-                      Add  <img src="https://img.icons8.com/bubbles/50/000000/add-shopping-cart.png">
-                      </button>
-                </div>
-              
+  <div class="container" >
+    <div class="row" *ngFor="let P of productcart">
+
+   
+      <div class="col">
+        <img  src="http://placehold.it/700x400" alt="">
+      </div>
+      <div class="col">
+        <div class="card-body">
+          <h4 class="card-title">
+            <a  ></a>  
+          </h4>
+          <h5 class="list-inline-item">Name: {{P.productName}}</h5>
+          <p class="card-text">Description:  {{P.productDescription}}</p>
+          <h5 class="list-inline-item">Line: {{P.prodcuctLine}}</h5>
+          <h5 class="list-inline-item">Price: {{P.MSRP| currency:'$'}}</h5>
+
 
         </div>
+        <div class="card-footer">
+          <button class="btn btn-success btn-sm" (click)="addlinec(P)" >
+            Add  <img src="https://img.icons8.com/material-two-tone/26/000000/shopping-cart.png">
+            </button>
+      </div>
+      </div>
     </div>
+
 </div>
 <app-footer></app-footer>

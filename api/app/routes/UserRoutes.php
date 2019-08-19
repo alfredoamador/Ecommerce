@@ -1,8 +1,4 @@
 <?php
-
-  $app->get('/greetings','UserController:helloUser');
-
-  $app->get('/hello/{name}','UserController:hello');
-
-
+    $app->get('/greetings', 'UserController:helloUser');
+    $app->get('/HelloUser/{name}', 'UserController:helloUserdos');
 ?>

@@ -1,22 +1,21 @@
 <?php
-//configuración de la base de trader_cdlrisefall3methods
-$db = require $contexto_app . '/app/database/config.php';
+    //Configuración de la base de datos
+    $db = require $contexto_app . '/app/database/config.php';
 
-//agregar configuración  para llave de encriptación
-$jwt = array('key' => 'UX9{8t_)Rg#hLd@n', 'algorithms' => array('HS256'));
+    //key de encriptación
+    $jwt = array ('key' => 'r-9U3G?:/Az>F,Un', 'algorithms' => array('HS256'));
 
-//configuración de la app
-$settings = array(
-  'displayErrorDetails' => true,
-  'determineRouteBeforeAppMiddleware' => true,
-  'db' => $db,
-  'jwt' => $jwt
-);
+    //configuración de la app
+    $settings = array (
+        'displayErrorDetails' => true,
+        'determineRouteBeforeAppMiddleware' => true,
+        'db' => $db,
+        'jwt' => $jwt
+    );
 
-//se agrega el contexto de al app
+    // se agrega el contexto de la app
+    $settings['contexto'] = $contexto_app;
 
-$settings['contexto'] = $contexto_app;
-
-return $settings;
-
+   // var_dump($settings); //Retorna el arreglo 
+    return $settings;
 ?>

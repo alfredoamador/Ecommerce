@@ -1,0 +1,37 @@
+<app-nav></app-nav>
+
+
+<div class="container">
+ 
+  <h1 class="text-center" style="margin: 20px 0px"> Orders</h1>
+  
+   
+  
+  <table  class="table table-striped ">
+    <thead>
+      <tr>
+        <th scope="col">ProductName</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price Each</th>
+        <th scope="col">Total</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of detail">
+        
+        <td >{{d.productName}}</td>
+        <td >{{d.quantityOrdered}}</td>
+        <td >{{d.priceEach| currency:'$'}}</td>
+        <td >{{d.priceEach * d.quantityOrdered | currency:'$'}}</td>
+      
+    
+      </tr>
+ 
+      
+      
+    </tbody>
+  </table>
+  
+  </div>
+<app-footer></app-footer>

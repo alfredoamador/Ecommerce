@@ -23,7 +23,7 @@
       <td >{{productscart.product.MSRP| currency:"USD":true:"2.2-2"}}</td>
       <td ><input (change)="addcart(productscart.product,$event.target.value)" class="form-control" style="width: 40%"  type="number" [value]="productscart.quantity"></td>
       <td >{{productscart.product.MSRP*productscart.quantity | currency:"USD":true:"2.2-2"}}</td>
-      <td ><a  class="btn" (click)="deleteproductos(productscart.product)"><img src="https://img.icons8.com/offices/40/000000/delete.png"></a></td>
+      <td ><a  class="btn btn-danger" (click)="deleteproductos(productscart.product)">Delete</a></td>
   
     </tr>
     <tr >
@@ -32,7 +32,7 @@
       <td ></td>
       <td >TOTAL:</td>
       <td> {{cart.cartPrice|currency:"USD":true:"2.2-2"}}</td>
-      <td><a  class="btn btn-info" >Pagar</a></td>
+      <td><a  class="btn btn-success" >Pagar</a></td>
   
     </tr>
     

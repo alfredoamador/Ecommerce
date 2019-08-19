@@ -11,18 +11,24 @@ import { Cart } from 'src/app/model/cart';
 })
 export class DetailComponent implements OnInit {
 private id;
-  constructor(private route:ActivatedRoute, private serviceee:ProductRepositoryService,private cart:Cart) { }
+private cartes;
+constructor(private route: ActivatedRoute,private servicesreposi:ProductRepositoryService,private cart:Cart) { }
 
   ngOnInit() {
+    
+
 
   }
-get productdetail():Product[]{
- const fi= this.route.snapshot.paramMap.get('id');
-console.log(fi);
-return this.serviceee.getproductdetail(fi);
-}
 
+
+get productcart():Product[]{
+  const ide = this.route.snapshot.paramMap.get("id");
+  this.id=ide;
+   this.cartes=this.servicesreposi.getProductsdetail(this.id);
+    return this.cartes;
+}
 addlinec(product:Product){
 this.cart.addLine(product);
 }
+
 }
